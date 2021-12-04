@@ -7,10 +7,9 @@ import com.github.ajalt.clikt.parameters.types.enum
 import mu.KotlinLogging
 import java.lang.ClassLoader.getSystemResourceAsStream
 
-val log = KotlinLogging.logger {  }
-
 object Day1: CliktCommand() {
-  val part: Part by argument().enum(ignoreCase = true)
+  val log = KotlinLogging.logger {  }
+  val part: Part by argument().enum<Part>(ignoreCase = true).default(Part.Part1)
   val input by argument().default("y2021/day1.txt")
 
   @Suppress("unused")
